@@ -1,8 +1,6 @@
 import argparse
 
 """
-# if gathering arguments into a list. 
-    parser.add_argument("--optarg3", nargs="*", help="<description>")
 For each project, fill in this template for specific cmd arguments.
 """
 
@@ -11,7 +9,7 @@ For each project, fill in this template for specific cmd arguments.
 def create_main_parser():
     parser = argparse.ArgumentParser()
 
-    # Add arguemnts below.
+    # TODO Add arguemnts below.
     # Templates for positional arguments:
     parser.add_argument("posarg1", type=int, help="<description>")
     
@@ -49,7 +47,7 @@ def create_main_parser():
     # We will create arguments of subparsers in functions for readibility.
     add_functionA_subparser(subparsers)
     add_functionB_subparser(subparsers)
-    # add more sub commands below.
+    # TODO add more sub commands below.
 
     # Parsed arguments will only contain attributes for the main parser and the subparser.
     return parser
@@ -71,6 +69,9 @@ def add_functionA_subparser(subparsers):
 def add_functionB_subparser(subparsers):
     b_parser = subparsers.add_parser('func-b', help='b help')
     b_parser.add_argument('--baz', choices='XYZ', help='baz help')
+
+# TODO add more sub command functions below.
+
 
 # This is the funciton to be imported. 
 # Putting this function here so the above functions could be defined in custom order.
