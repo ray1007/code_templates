@@ -78,3 +78,10 @@ def add_functionB_subparser(subparsers):
 def parse_args():
     parser = create_main_parser() 
     return parser.parse_args()
+
+
+# USe the following line in the main script.
+# from arg_parser import parse_args
+
+if __name__ == '__main__':
+    print(vars(parse_args()))
