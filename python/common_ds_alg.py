@@ -13,6 +13,8 @@ list, dict, set, tuple
 from collections import Counter
 from collections import defaultdict
 
+# call basic operators as functions
+from operator import truediv, mul, add, sub
 
 # sorted(iterable, key=lambda x: x, reversed=True)
 
@@ -86,6 +88,12 @@ BST iterator
 
 
 """
+Represent a Graph (with built-in types)
+"""
+
+
+
+"""
 BFS
 """
 
@@ -125,6 +133,9 @@ inorder(root, order)
 """
 Combinations
 """
+# iterators for combinations, permuations, ...
+from itertools import product, permutations
+
 
 
 """
@@ -134,6 +145,13 @@ Permutations
 
 """ 
   Heap / Priority Queue
+
+- insert(H, x): O(log n)
+- extract_min(H): O(1) amortized
+- decrease_key(H, x, k): O(log n)
+- meld(H1, H2): O(n)
+- find_min(H, x): O(1)
+- delete(H, x): O(log n)
 """
 import heapq
 # default is min heap. to use a max heap, invert the numbers.
@@ -157,9 +175,39 @@ heapq.nsmallest(list, )
 
 """
 Union Find
+
+- make_set(x): O(1)
+- find(x): m O(log* n) (where m: total # of operations, n: # of elements)
+- union(x, y): same as find(x, y) 
 """
+class UnionFind:
+    def __init__(self):
+        self.node_2_parent = {}
+        self.node_2_rank = {}
 
+    def make_set(x):
+        self.node_to_parent[x] = x
+        self.node_to_rank[x] = 0
 
+    def find(x):
+        if self.node_2_parent[x] != x:
+            self.node_2_parent[x] = self.find(self.node_2_parent[x])
+        return self.node_2_parent[x]
+
+    def union(x, y):
+        x_repr, y_repr = self.find(x), self.find(y)
+        if x_repr == y_repr:
+            return 
+
+        x_rank, y_rank = self.node_2_rank[x_repr], self.node_2_rank[y_repr]
+        if x_rank > y_rank:
+            self.node_2_parent[y_repr] = x_repr
+        elif x_rank < y_rank:
+            self.node_2_parent[x_repr] = y_repr
+        else:
+            self.node_2_parent[y_repr] = x_repr
+            self.node_2_rank[x_repr] += 1
+            
 
 """
 Trie
