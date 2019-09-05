@@ -1,8 +1,10 @@
 ## Basic templates for Python
 
 
-### builtin.py
-Containing some common built in functionality/code/lib. 
+
+### common_dsalg.py
+Containing some common data structure & algorithm implemented with built-in functionality/code/lib. Frequently used in leetcode practice.
+
 - use iterator to save memory.
 - `itertools`: permuation, combination, product. [realpython blog](https://realpython.com/python-itertools/)
 
@@ -14,6 +16,9 @@ Containing some common built in functionality/code/lib.
   - `heapq`: default is min heap
   - `set`: hash set
   - `dict`: hash map
+  - `union find`, [code example](https://leetcode.com/articles/redundant-connection/), [time complexity note](http://www.cs.jhu.edu/~mdinitz/classes/IntroAlgorithms/Fall2018/Lectures/lecture9.pdf)
+
+---
 
 ### arg_parser.py
 - For parsing command line arguments, use [arg_parser.py](./arg_parser.py)
@@ -22,6 +27,8 @@ Containing some common built in functionality/code/lib.
   - [StackOverflow #1](https://stackoverflow.com/questions/46719811/best-practices-for-writing-argparse-parsers) [StackOverflow #2](https://stackoverflow.com/questions/17073688/how-to-use-argparse-subparsers-correctly)
   - [Use case](https://github.com/tdozat/Parser-v3/blob/master/main.py)
   - [Medium blog post](https://medium.com/@george.shuklin/argparse-how-to-get-command-name-for-subparsers-d836483e9511)
+
+---
 
 ### decorators.py
 > My notes
@@ -37,9 +44,12 @@ Containing some common built in functionality/code/lib.
 ), [some wiki](https://wiki.python.org/moin/PythonDecoratorLibrary
 )
 
+---
+
 ### anti_patterns.py
 things we should avoid.
 
+---
 
 ## Templates for Applications
 
