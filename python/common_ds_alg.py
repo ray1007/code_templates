@@ -16,7 +16,7 @@ from collections import defaultdict
 # call basic operators as functions
 from operator import truediv, mul, add, sub
 
-# sorted(iterable, key=lambda x: x, reversed=True)
+sorted(iterable, key=lambda x: x, reversed=True)
 
 """
 Binary search
@@ -131,16 +131,42 @@ inorder(root, order)
 # operate on the same instance of list.
 
 """
-Combinations
+  Combinations & Permutation
+
+usually works when the problem asks for every solution.
 """
 # iterators for combinations, permuations, ...
 from itertools import product, permutations
 
+# combination
+def search(nums, pos, combo, solutions):
+    # termination condition
+    if done:
+        solutions.append()
+        return
+
+    while pos < len(nums):
+        combo.append(nums[pos])
+        search(nums, pos+1, combo, solutions)
+        combo.pop()
+        pos += 1
 
 
-"""
-Permutations
-"""
+# permutation
+def search(nums, visited, perm, solutions):
+    # termination condition
+    if done:
+        solutions.append()
+        return
+
+    for i in range(len(nums)):
+        if i in visited:
+            continue
+        visited.add(i)
+        perm.append(nums[i])
+        search(nums, visited, perm, solutions)
+        visited.remove(i)
+        perm.pop()
 
 
 """ 
@@ -180,6 +206,10 @@ Union Find
 - find(x): m O(log* n) (where m: total # of operations, n: # of elements)
 - union(x, y): same as find(x, y) 
 """
+class Node:
+    def __init__(self, val):
+        self.val = val
+
 class UnionFind:
     def __init__(self):
         self.node_2_parent = {}
@@ -207,7 +237,16 @@ class UnionFind:
         else:
             self.node_2_parent[y_repr] = x_repr
             self.node_2_rank[x_repr] += 1
-            
+
+uf = UnionFind()
+uf.make_set(1)            
+uf.make_set(2)
+uf.make_set(3)
+uf.make_set(4)
+uf.union(1,3)
+print(uf.find(2) == uf.find(4))
+print(uf.find(1) == uf.find(3))
+ 
 
 """
 Trie
