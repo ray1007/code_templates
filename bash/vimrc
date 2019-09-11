@@ -1,0 +1,15 @@
+syntax on
+set shiftwidth=2
+set tabstop=2
+set expandtab
+
+set smartindent
+
+set number
+
+set ruler
+set ic
+set ru
+
+map <S-Left>  :tabp<cr>
+map <S-Right> :tabn<cr>
