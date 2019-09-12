@@ -46,6 +46,11 @@ Containing some common data structure & algorithm implemented with built-in func
 
 ---
 
+### plot.py
+My templates for drawing plots with `matplotlib`.
+
+---
+
 ### anti_patterns.py
 things we should avoid.
 
