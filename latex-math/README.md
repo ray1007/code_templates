@@ -18,12 +18,26 @@ A &= B + C && (exaplantion 1) \\
 \end{align*}
 ```
 
+### When expression is too long
+```latex
+\[
+  % use indent to increase readability.
+  \frac{
+    A_1 + A_2
+  }{
+    \begin{multilined} % use `multilined` environment to split expression.
+        \big( M_1 + M_2 + M_3 + \\
+        M_4 + M_5 + M_6 + \\
+        M_7 + M_8 + M_9 \Big)
+    \end{multilined}
+  }
+\]
+```
+
 ### Table
 ```latex
-\begin{tabular}{ l | c || r } 
-% l, c, r, means to align the column to left, center, or right.
-% lines bewtween 
-  \hline
+\begin{tabular}{ l | c || r }  % l, c, r, means to align the column to left, center, or right.
+  \hline % lines bewtween rows
   1  & 2  & 3 \\
   4  & 5  & 6 \\
   \hline
@@ -33,7 +47,7 @@ A &= B + C && (exaplantion 1) \\
 \end{tabular}
 
 
-\begin{center} % cneter the table.
+\begin{center} % center the table.
 \begin{tabular}{ | l | l | l | p{5cm} |} % if content is text and need wrapping.
   \hline
   Day & Min Temp & Max Temp & Summary \\ \hline
