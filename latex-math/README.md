@@ -25,6 +25,22 @@ A &= B + C && (exaplantion 1) \\
 
 
 ---
+### ordered/unordered list
+```latex
+\begin{enumerate}
+  \item item1
+  \item item2
+  \item item3
+\end{enumerate}
+
+\begin{itemize}
+  \item item1
+  \item item2
+  \item item3
+\end{itemize}
+```
+
+---
 
 ### Probability Notations (latex)
 
