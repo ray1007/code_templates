@@ -1,6 +1,11 @@
 ## Basic templates for Python
 
 
+### builtin.py
+Frequently used built-in modules.
+
+- `logging`
+  - https://realpython.com/python-logging/
 
 ### common_dsalg.py
 Containing some common data structure & algorithm implemented with built-in functionality/code/lib. Frequently used in leetcode practice.

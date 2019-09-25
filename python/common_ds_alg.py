@@ -4,19 +4,8 @@ Frequently used in my leetcode practices.
 """
 
 
-"""
-Basic built-in types & libs
-"""
-list, dict, set, tuple
 
 
-from collections import Counter
-from collections import defaultdict
-
-# call basic operators as functions
-from operator import truediv, mul, add, sub
-
-sorted(iterable, key=lambda x: x, reversed=True)
 
 """
 Binary search
@@ -38,6 +27,10 @@ while left + 1 < right:
 Two-pointer
 """
 
+
+"""
+Find Palindrome: Manacher's algorithm
+"""
 
 
 
@@ -83,15 +76,70 @@ def partition(nums, begin, end):
 
 
 """
-BST iterator
+BST iterator (generator function, class)
 """
+
+def bst_itertor(root):
+    stack = []
+    node = root
+    while node:
+        stack.append(node)
+        node = node.left
+
+    while len(stack) > 0:
+        yield stack[-1]
+        
+        node = stack.pop()
+        if node.right:
+            node = node.right
+            while node:
+                stack.append(node)
+                node = node.left
+            continue
+        
+        # else
+        while len(stack) > 0 and stack[-1].right == node:
+            node = stack.pop()
+
+
+class BSTIterator:
+  def __init__(self, root):
+      self.stack = []
+      node = root
+      while node:
+          self.stack.append(node)
+          node = node.left
+
+  def hasNext(self):
+      return len(self.stack) > 0
+
+  def peak(self):
+      return self.stack[-1]
+
+  def next(self):
+      node = self.stack.pop()
+      ret = node
+      if node.right:
+          # goto the right subtree, then go all the way to left.
+          node = node.right
+          while node:
+              self.stack.append(node)
+              node = node.left
+      else:
+          # node is rightmost. go to the ancestor that `node` is in its left subtree.
+          while len(self.stack) > 0 and self.stack[-1].right == node:
+              node = self.stack.pop()
+
+      return ret
 
 
 """
 Represent a Graph (with built-in types)
 """
+edges = defaultdict(list)
 
-
+# for example, edges[u] = [v1, v2, v3]
+# there exist edges from `u` to `v1`, `v2`, `v3`.
 
 """
 BFS
@@ -252,6 +300,26 @@ print(uf.find(1) == uf.find(3))
 Trie
 """
 
+class TrieNode:
+    def __init__(self, char):
+        self.char = char
+        self.children = {}
+        self.is_word = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode(None)
+
+    def add_word(self, word):
+        node = self.rot
+        for char in word:
+            if char in node.children:
+                node = node.children[char]
+            else:
+                new_node = TrieNode(char)
+                node.children[char] = new_node
+                node = new_node
+        node.is_word = True
 
 
 
