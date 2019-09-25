@@ -5,7 +5,8 @@
 Frequently used built-in modules.
 
 - `logging`
-  - https://realpython.com/python-logging/
+  - [tutorial (real python blog)](https://realpython.com/python-logging/)
+  - [further readings (real python blog)](https://realpython.com/python-logging-source-code/)
 
 ### common_dsalg.py
 Containing some common data structure & algorithm implemented with built-in functionality/code/lib. Frequently used in leetcode practice.
