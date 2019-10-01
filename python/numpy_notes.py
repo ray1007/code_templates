@@ -13,7 +13,8 @@ np.array()
 np.expand_dims(x, axis=0)
 np.squeeze()
 np.reshape(x, (1,2,3))
-np.swapaxes(x, 0, 1)
+np.transpose(x, (1,2,0)) # permute axis.
+#np.swapaxes(x, 0, 1) # this could be done by np.transpose().
 
 # join/split arrays TODO
 np.stack()
