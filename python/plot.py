@@ -1,4 +1,12 @@
+"""
+Template for drawing plots with matplotlib
+"""
 
+# if this script generates this error:
+# _tkinter.TclError: no display name and no $DISPLAY environment variable
+# uncomment these 2 lines
+#import matplotlib 
+#matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
