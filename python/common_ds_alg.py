@@ -29,9 +29,26 @@ Two-pointer
 
 
 """
-Find Palindrome: Manacher's algorithm
+Manacher's algorithm: find longest palindromic substring
 """
 
+
+"""
+Voting: Boyer-Moore alg: find majority element
+array A, find the element that appears more than n // 2 times.
+"""
+majority, count = None, 0
+for num in A:
+    if count == 0:
+        majority, count = num, 1
+    elif num == majority:
+        count += 1
+    else:
+        count -= 1
+
+# check again if majority is valid.
+if sum(1 for num in A if num == majority) <= len(A) // 2:
+    majority = None
 
 
 """
@@ -245,6 +262,20 @@ heapq.heappush(heap, 6)
 heapq.heappop(heap)
 
 heapq.nsmallest(list, )
+
+# sometimes the ordering rule for a data structure might be
+# a bit complicated. We could create a class for the specidfic 
+# ordering rule.
+
+class HeapNode:
+    def __init__(val1, val2):
+        self.val1 = val1
+        self.val2 = val2
+
+    def __lt__(self, other):
+        if self.val1 < other.val1:
+            return True
+        return self.val2 > other.val2
 
 
 """
