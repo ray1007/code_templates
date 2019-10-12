@@ -57,6 +57,17 @@ My templates for drawing plots with `matplotlib`.
 
 ---
 
+### test.py
+[RealPython blog](https://realpython.com/python-testing/)
+`python -m unittest discover -s tests`
+
+[RealPython blog](https://realpython.com/python-cli-testing/#unit-testing-with-pytest-and-mocks)
+
+---
+
+### execl.py
+
+
 ### anti_patterns.py
 things we should avoid.
 

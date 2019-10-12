@@ -16,6 +16,10 @@ from operator import truediv, mul, add, sub
 
 sorted(iterable, key=lambda x: x, reversed=True)
 
+# pretty print
+import pprint
+pp = pprint.PrettyPrinter()
+
 """
 breakpoint / debug
 """
