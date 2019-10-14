@@ -18,8 +18,21 @@ def decorator(func):
         return ret
     return wrapper
 
+# When applying decorators on class methods, we need to explicitly 
+# put `self` argument, and we could access instance attributes with it.
+def decorator(func):
+    @functools.wraps(func)
+    def wrapper(self, *args, **kwargs):
+        ret = func(self, *args, **kwargs)
+        return ret
+    return wrapper
+
 # if a decorator takes arguments, then we have to create
 # a function that returns a decorator function.
+def my_decorator(my_arg):
+    def decorator(func):
+        ...
+    return decorator
 
 
 # it is possible to create a stateful decorator

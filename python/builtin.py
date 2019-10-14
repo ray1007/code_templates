@@ -66,12 +66,13 @@ import logging
 
 # Inside each module, set the logger's name to __name__
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 # remember a Logger object can have multiple Handlers.
 # if writing log to console
 handler = logging.StreamHandler()
 handler.setLevel(logging.WARNING)
-logger_format = logging.Formatter('%(asctime)s| %(name)s | %(levelname)s: %(message)s')
+logger_format = logging.Formatter('%(levelname)s (%(name)s) : %(message)s')
 handler.setFormatter(logger_format)
 logger.addHandler(handler)
 

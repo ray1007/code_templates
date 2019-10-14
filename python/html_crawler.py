@@ -59,5 +59,5 @@ soup.find(name='a', string=re.compile('^El'))
 # search with CSS selector: .select()
 
 
-
+# call .decompose() on nodes to remove it from the DOM.
 
