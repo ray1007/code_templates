@@ -20,6 +20,33 @@ sorted(iterable, key=lambda x: x, reversed=True)
 import pprint
 pp = pprint.PrettyPrinter()
 
+
+# namedtuple asign meaning to each position, it is more readable.
+from collections import namedtuple
+
+
+# create a new type. pass in the new type name and field names
+Book = namedtuple('Book', 'author title genre year price instock')
+
+# create namedtuple instance.
+book = Book('Suzane Collins','The Hunger Games', 'Fiction', 2008, 6.96, 20),
+
+# namedtuple is immutable. _replace() method creates a new namedtuple.
+book._replace(author='Adam Smith')
+
+# useful when using csv & sqlite. just pass tuples to ._make() method
+import csv
+for emp in map(EmployeeRecord._make, csv.reader(open("employees.csv", "rb"))):
+    print emp.name, emp.title
+
+import sqlite3
+conn = sqlite3.connect('/companydata')
+cursor = conn.cursor()
+cursor.execute('SELECT name, age, title, department, paygrade FROM employees')
+for emp in map(EmployeeRecord._make, cursor.fetchall()):
+    print emp.name, emp.title
+
+
 """
 breakpoint / debug
 """
